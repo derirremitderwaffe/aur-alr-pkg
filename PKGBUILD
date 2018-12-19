@@ -35,6 +35,6 @@ package() {
 	cp -afvT ./ $pkgdir/usr/share/alire
 	cd "$srcdir"
 	mkdir -p $pkgdir/usr/bin/
-	cp alr.sh $pkgdir/usr/bin/
-	chmod 751 $pkgdir/usr/bin/alr.sh
+	cp alr.sh $pkgdir/usr/bin/alr
+	chmod o+rx $pkgdir/usr/bin/alr
 }
