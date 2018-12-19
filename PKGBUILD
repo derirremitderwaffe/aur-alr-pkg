@@ -3,7 +3,7 @@
 # NOTE: Please fill out the license field for your package! If it is unknown,
 # then please put 'unknown'.
 
-# Maintainer: Your Name <youremail@domain.com>
+# Maintainer: julius <julius at julius-obk.de>
 pkgname=alr
 pkgver=0.6.0
 pkgrel=1
@@ -24,9 +24,10 @@ backup=()
 options=()
 install=
 changelog=
-source=("$pkgname::git+https://github.com/alire-project/alr.git#tag=v0.6.0")
+source=("$pkgname::git+https://github.com/alire-project/alr.git#tag=v0.6.0"
+"https://raw.githubusercontent.com/derirremitderwaffe/aur-alr-pkg/master/alr.sh")
 noextract=()
-md5sums=("SKIP")
+md5sums=("SKIP" "SKIP")
 validpgpkeys=()
 
 _repo_branch=${1:-v0.6.0}
@@ -46,8 +47,6 @@ prepare() {
 
 build() {
 	cd "$pkgname"
-	#./configure --prefix=/usr
-	#make
         gprbuild -j0 -p -XSELFBUILD=False -P alr_env.gpr
 
 }
@@ -59,7 +58,10 @@ build() {
 
 package() {
 	cd "$pkgname"
-#	make DESTDIR="$pkgdir/" install
         mkdir -p $pkgdir/usr/share/alire
 	cp -afvT ./ $pkgdir/usr/share/alire
+	cd "$srcdir"
+	mkdir -p $pkgdir/usr/bin/
+	cp alr.sh $pkgdir/usr/bin/
+	chmod 751 $pkgdir/usr/bin/alr.sh
 }
