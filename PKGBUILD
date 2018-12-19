@@ -28,6 +28,7 @@ source=("$pkgname::git+https://github.com/alire-project/alr.git#tag=v0.6.0"
 "https://raw.githubusercontent.com/derirremitderwaffe/aur-alr-pkg/master/alr.sh")
 noextract=()
 md5sums=("SKIP" "SKIP")
+sha256sums=("SKIP" "4d505ed68142de0f0960ad4182abe71271afe4e55435e9b9ad67dc88b73c5ac7")
 validpgpkeys=()
 
 _repo_branch=${1:-v0.6.0}
@@ -36,10 +37,6 @@ _repo_branch=${1:-v0.6.0}
 
 
 prepare() {
-    
-	#cd "$pkgname-$pkgver"
-	#patch -p1 -i "$srcdir/$pkgname-$pkgver.patch" -- no patch
-	#git clone -b "$repo_branch" "$url" 
 	cd "$pkgname"
 	git submodule update --init --recursive
     
@@ -48,14 +45,7 @@ prepare() {
 build() {
 	cd "$pkgname"
         gprbuild -j0 -p -XSELFBUILD=False -P alr_env.gpr
-
 }
-
-#check() {
-	#cd "$pkgname-$pkgver"
-	#make -k check
-#}
-
 package() {
 	cd "$pkgname"
         mkdir -p $pkgdir/usr/share/alire
