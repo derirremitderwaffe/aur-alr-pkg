@@ -1,0 +1,17 @@
+pkgbase = alr-tool
+	pkgdesc = Ada LIbrary REpository tool
+	pkgver = 0.6.0
+	pkgrel = 1
+	url = https://github.com/alire-project/alr
+	arch = x86_64
+	license = GPL-3
+	depends = gcc-ada
+	depends = gprbuild
+	depends = git
+	source = alr-tool::git+https://github.com/alire-project/alr.git#tag=v0.6.0
+	source = https://raw.githubusercontent.com/derirremitderwaffe/aur-alr-pkg/master/alr.sh
+	sha256sums = SKIP
+	sha256sums = 4d505ed68142de0f0960ad4182abe71271afe4e55435e9b9ad67dc88b73c5ac7
+
+pkgname = alr-tool
+
