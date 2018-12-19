@@ -10,7 +10,7 @@ pkgrel=1
 epoch=
 pkgdesc="Ada LIbrary REpository"
 arch=(x86_64)
-url=
+url="https://github.com/alire-project/alr"
 license=('GPL-3')
 groups=()
 depends=('gcc-ada' 'gprbuild' 'git')
@@ -29,7 +29,7 @@ noextract=()
 md5sums=("SKIP")
 validpgpkeys=()
 
-repo_branch=${1:-v0.6.0}
+_repo_branch=${1:-v0.6.0}
 
 
 
