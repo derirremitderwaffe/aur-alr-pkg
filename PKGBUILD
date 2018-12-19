@@ -1,5 +1,5 @@
 # Maintainer: julius <julius at julius-obk.de>
-pkgname=alr
+pkgname=alr-tool
 pkgver=0.6.0
 pkgrel=1
 pkgdesc="Ada LIbrary REpository tool"
