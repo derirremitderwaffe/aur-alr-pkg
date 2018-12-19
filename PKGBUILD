@@ -2,7 +2,7 @@
 pkgname=alr
 pkgver=0.6.0
 pkgrel=1
-pkgdesc="Ada LIbrary REpository"
+pkgdesc="Ada LIbrary REpository tool"
 arch=(x86_64)
 url="https://github.com/alire-project/alr"
 license=('GPL-3')
